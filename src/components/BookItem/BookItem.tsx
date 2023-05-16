@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Book } from "../interfaces/Book.interface";
+import "./BookItem.css";
 
 type TProps = {
   book: Book;
@@ -7,7 +8,7 @@ type TProps = {
 
 const BookItem: FC<TProps> = ({ book }) => {
   return (
-    <li key={book.id}>
+    <li className='book-item' key={book.id}>
       {book.title} by {book.author}, ${book.price}
     </li>
   );
