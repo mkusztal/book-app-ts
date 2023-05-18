@@ -5,13 +5,14 @@ import "./BooksList.css";
 
 type Props = {
   books: Book[];
+  deleteBook: (book: Book) => void;
 };
 
-const BooksList: FC<Props> = ({ books }) => {
+const BooksList: FC<Props> = ({ books, deleteBook }) => {
   return (
     <ul className='books-list'>
       {books.map((book: Book) => (
-        <BookItem key={book.id} book={book} />
+        <BookItem key={book.id} book={book} deleteBook={deleteBook} />
       ))}
     </ul>
   );

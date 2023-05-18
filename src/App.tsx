@@ -25,12 +25,17 @@ const App: FC = () => {
     setBooks([...books, book]);
   };
 
+  const deleteBook = (book: Book): void => {
+    const newBookList = books.filter((e) => e.id !== book.id);
+    setBooks(newBookList);
+  };
+
   return (
     <div className='container'>
       <header>
         <h1>Books App</h1>
       </header>
-      <BooksList books={books} />
+      <BooksList books={books} deleteBook={deleteBook} />
       <AddBookForm addBook={addBook} />
     </div>
   );
