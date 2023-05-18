@@ -43,6 +43,7 @@ const AddBookForm: FC<TProps> = ({ addBook }) => {
       Price:{" "}
       <input
         type='number'
+        min={0}
         value={price}
         onChange={(e) => setPrice(parseInt(e.target.value))}
       />
