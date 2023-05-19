@@ -4,14 +4,14 @@ import "./BookItem.css";
 
 type TProps = {
   book: Book;
-  deleteBook: (book: Book) => void;
+  removeBook: (book: Book) => void;
 };
 
-const BookItem: FC<TProps> = ({ book, deleteBook }) => {
+const BookItem: FC<TProps> = ({ book, removeBook }) => {
   return (
     <li className='book-item' key={book.id}>
       {book.title} by {book.author}, ${book.price}
-      <button onClick={() => deleteBook(book)}>Remove</button>
+      <button onClick={() => removeBook(book)}>Remove</button>
     </li>
   );
 };
