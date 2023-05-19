@@ -16,9 +16,9 @@ const AddBookForm: FC = () => {
     e.preventDefault();
     const book: Book = {
       id: randomID(10),
-      title: title,
-      author: author,
-      price: price,
+      title,
+      author,
+      price,
     };
     dispatch(addBook(book));
     setTitle("");
